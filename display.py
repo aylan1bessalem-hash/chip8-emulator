@@ -1,6 +1,6 @@
 """
 display.py - Affichage de l'écran CHIP-8 via Pygame
-=====================================================
+
 Le CHIP-8 dispose d'un écran monochrome de 64x32 pixels.
 Chaque pixel est soit allumé (blanc) soit éteint (noir).
 
