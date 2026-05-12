@@ -13,10 +13,10 @@ Ce module gère :
 import random
 
 
-# ---------------------------------------------------------------------------
+
 # Polices de caractères intégrées (sprites 4x5 pixels pour les chiffres 0-F)
 # Chaque caractère est encodé sur 5 octets, stocké en début de mémoire
-# ---------------------------------------------------------------------------
+
 FONTSET = [
     0xF0, 0x90, 0x90, 0x90, 0xF0,  # 0
     0x20, 0x60, 0x20, 0x20, 0x70,  # 1
@@ -89,9 +89,9 @@ class CPU:
         for i, byte in enumerate(FONTSET):
             self.memory[i] = byte
 
-    # -----------------------------------------------------------------------
+
     # Chargement de ROM
-    # -----------------------------------------------------------------------
+
 
     def load_rom(self, filepath):
         """
@@ -108,9 +108,9 @@ class CPU:
 
         print(f"[CPU] ROM chargée : {filepath} ({len(data)} octets)")
 
-    # -----------------------------------------------------------------------
+
     # Cycle d'exécution principal
-    # -----------------------------------------------------------------------
+
 
     def cycle(self):
         """
@@ -138,9 +138,9 @@ class CPU:
         # DECODE & EXECUTE
         self._execute(opcode)
 
-    # -----------------------------------------------------------------------
+
     # Décodage et exécution des opcodes
-    # -----------------------------------------------------------------------
+
 
     def _execute(self, opcode):
         """
@@ -345,9 +345,9 @@ class CPU:
             for i in range(x + 1):
                 self.V[i] = self.memory[self.I + i]
 
-    # -----------------------------------------------------------------------
+
     # Dessin de sprites
-    # -----------------------------------------------------------------------
+
 
     def _draw_sprite(self, x, y, n):
         """
@@ -377,9 +377,8 @@ class CPU:
                     if collision:
                         self.V[0xF] = 1  # collision détectée
 
-    # -----------------------------------------------------------------------
     # Mise à jour des timers (à appeler à 60 Hz)
-    # -----------------------------------------------------------------------
+
 
     def update_timers(self):
         """
